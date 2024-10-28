@@ -1,4 +1,4 @@
 def call(){
-    sh 'docker stop App'
-    sh 'docker rm App'
+    sh 'sudo docker stop App'
+    sh 'sudo docker rm App'
 }
