@@ -1,11 +1,11 @@
 def call(String dockerHubUsername, String imageName) {
-    // Login to Docker Hub
-    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-        sh """
-            echo "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
-        """
-    }
+  String dockerUsername = "ghadah"
+    String dockerPassword = "Wxcvbn21*"
 
+    // Login to Docker Hub
+    sh """
+        echo "$dockerPassword" | sudo docker login -u "$dockerUsername" --password-stdin
+    """
     // Build the Docker image
     sh """
         sudo docker build \
