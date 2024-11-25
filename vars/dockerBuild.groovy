@@ -6,6 +6,6 @@ def call(String dockerHubUsername, String imageName) {
     sh "sudo docker tag ${imageName} ${dockerHubUsername}/${imageName}:latest"
     // Push the Docker image
     withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'docker']) {
-        sh "sudo docker push ${dockerHubUsername}/${imageName}:latest"
+        sh "docker push ${dockerHubUsername}/${imageName}:latest"
     }
 }
