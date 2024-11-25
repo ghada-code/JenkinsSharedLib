@@ -1,3 +1,3 @@
 def call() {
-    sh 'sudo trivy image ghadah/app:latest > trivyimage.txt'
+    sh 'sudo trivy image --scanners vuln ghadah/app:latest > trivyimage.txt'
 }
